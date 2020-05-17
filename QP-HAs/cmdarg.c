@@ -3,14 +3,21 @@
 
 /* program to multiply two numbers */
 int main(int argc, char *argv[]) {
-  int num1 = 0;
+  char *filename;
   int num2 = 0;
+  char buf[1000];
+  FILE *fh;
   if (argc != 3) {
-    printf("Usage: program <n1> <n2>\n");
+    printf("Usage: program <filename> <n2>\n");
     exit(0);
   }
-  num1 = atoi(argv[1]);
+  filename = argv[1];
   num2 = atoi(argv[2]);
-  printf("%d * %d = %d\n", num1, num2, num1 * num2);
+  fh = fopen(filename, "r");
+  // printing the read contents
+  while (fgets(buf, 1000, fh) != NULL) {
+    printf("%s", buf);
+  }
+  printf("2nd argument is %d\n", num2);
 }
-  
+
