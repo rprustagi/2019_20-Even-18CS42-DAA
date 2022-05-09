@@ -1,0 +1,56 @@
+DAA Considerations
+7 essentials books on Algo and DS
+  . Introduction to algorithms / Cormen, Leiserson &​  Rivest
+  . Data structures : from arrays to priority queues / by Amsbury
+  . Information retrieval : data structures &​algorithms /​Frakes &​Ricardo
+  . Fundamentals of data structures /​Horowitz and Sahni
+  . Reliable data structures in C /​  Thomas Plum
+  . Data structures and algorithm analysis in C /​  Mark Allen Weiss
+  . Practical data structures in C++ /​  Bryan Flamig
+  . Data structures, algorithms and program style using C /​Korsh & Garrett
+
+Question for Back of the envelope calculations
+. How long it will take to walk to Yellachennahalli metro station.
+. What is the cost per hour you are paying for studying t KSIT?
+. How long does it to take the fill the seminar hall?
+. How much money you spent eating outside (your home) in last one year?
+. An Uber driver claims that he has driven 100,000KM in last one year.
+
+Important algorithm design techniques
+  . Dynamic programming: save state
+  . Preprocess information into appropriate data structures.
+  . Divide and conquer approach: Split the problem into sub problems
+  . Scanning algorithms: when working with arrays, how to extent the solution of x[0..i-1] to x[0..i]
+  . Cumulative analytics: e.g. to compute the avg of 50 students, when 1 person is replaced.
+  . Identify a matching lower bound.
+
+Dynamic programming:
+  . save state to avoid recomputation
+    By using space to store results, we avoid time to compute
+
+Binary Search
+  https://www.drdobbs.com/cpp/invariants-for-binary-search-part-1-a-si/240169169
+  https://www.drdobbs.com/cpp/invariants-for-binary-search-part-2-refi/240169199
+  https://www.drdobbs.com/cpp/invariants-for-binary-search-part-3-impr/240169239
+  https://www.drdobbs.com/cpp/invariants-for-binary-search-part-4-usin/240169267
+  https://www.drdobbs.com/cpp/abstractions-for-binary-search-part-5-ge/240169289
+  https://www.drdobbs.com/cpp/abstractions-for-binary-search-part-6-ho/240169326
+  https://www.drdobbs.com/cpp/abstractions-for-binary-search-part-7-ch/240169367
+  https://www.drdobbs.com/cpp/abstractions-for-binary-search-part-8-wh/240169392
+  https://www.drdobbs.com/cpp/abstractions-for-binary-search-part-9-wh/240169416
+  https://www.drdobbs.com/cpp/abstractions-for-binary-search-part-10-p/240169437
+
+
+Iteration and Recursion: Complexity analysis
+  Iteration
+    Focus is on loops
+    1. Finding Max or min in an unsorted array. O(n)
+    2. Check if all elements in the array are distinct. O(n^2)
+    3. Matrix multiplication. O(n^3)
+    4. Number of bits in binary representation of n. O(log n)
+  Recursion
+    Write and solve recursion equation
+    1. Tower of Hanoi
+    2.
+    3.
+    4.

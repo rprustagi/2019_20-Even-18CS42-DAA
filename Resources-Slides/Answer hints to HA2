@@ -1,0 +1,144 @@
+arr=[2, -3, 1.5, -1, 3, -2, -3, 3]
+I1: maxsubseq(arr) #8, last elem=3
+  I2: maxsubseq(arr) #7, last elem=-3
+    I3: maxsubseq(arr) #6, last elem=-2
+      I4: maxsubseq(arr) #5, last elem=3
+        I5: maxsubseq(arr) #4, last elem=-1
+          I6: maxsubseq(arr) #3, last elem=1.5
+            I7: maxsubseq(arr) #2, last elem=-3
+              I8: maxsubseq(arr) #1, last elem=2
+                last elem=2
+                return max=2, suffix=2
+            I7:last elem = -3
+              return max=2, suffix=0 (2-3=-1 is -ve)
+          I6:last elem=1.5
+            return max=2 (>0+.5), suffix=1.5 = 0+1.5
+        I5:last elem=-1
+          return max=2 (>0.5+1), suffix=0.5 (1.5 -1)
+      I4:last elem=3
+        return max=3.5 <0.5+3, suffix=3.5(=0.5+3)
+    I3:last elem=-2
+      return max=3.5 (>3.5-2), suffix=1.5 (3.5-2)
+  I2:last elem=-3
+    return max=3.5 (>1.5-3), suffix=0(1.5-3 is -ve)
+I1:last elem=3
+  return max=3.5 (>0+3), suffix=3
+
+  answer 3.5
+
+ Q2:
+str=abcde
+I1: abcde
+  I2: bcd
+    I3: c
+    return c
+  return dcb
+return edcba
+
+Q4:
+The parameter p1 is used only by main code.
+Method works as follows
+	S1: Compare(1-25, 26-50) returns -1
+	S2: Compare(1-12, 13-24): returns +1
+	S3: Compare(1-6,7-12): returns 0 implies defective ball is lighter and is in 13-24
+	S4: Compare(13-18, 19-24): returns +1 (implies lighter ball is in 19-24)
+	S5: Compare(19-21,22-24): return +1 (implies lighter ball is in 22-24)
+	S6: Compare(22,23): return +1  - Implies ball 23 is lighter.
+
+
+Q09
+You are supposed to sort the array using insertion sort.
+However, when doing insert operation during insert, this insert has to be done using binary search.
+Consider an  example where we need to sort using ascending order.
+8,10,19,5,17,20,4,14,18,2
+First iteration: 8 is sorted., array is  8, -10,19,5,17,20,4,14,18,2
+2nd iteration: 10 is in sorted order, array is  8,10, -19,5,17,20,4,14,18,2
+3rd iteration: 19 is in sorted order, array is  8,10,19, -5,17,20,4,14,18,2
+4th iteration: 5 is not in sorted order. This has to be inserted part sub array (8,10,19). Typical insert sort does linear comparison to find the right place for 5 which will require 3 comparison. Using binary search of (8,10,10), it will require only two comparison.
+The sorted array now becomes 5, 8,10,19,-17,20,4,14,18,2
+5th iteration: 17 is not in sorted order. It needs to be inserted in right place in (5,8,10,19) which is just before 19.
+The sorted array becomes 5, 8,10,17,19, -20,4,14,18,2
+6th iteration: 29 is in sorted order, array is  5,8,10,17,19,20, -4,14,18,2
+7th iteration: 4 is not in sorted order and to be inserted in right place in (5,8,10,17,19,20) which general linear sort requires 6 comparison. Using binary search, we will require only 3 comparisons. The Sort array becomes 4,5,8,10,17,19,20,  -14,18,2
+
+Proceed in this way. Essentially, use binary search in the sorted array to find right place and then do the right shift.
+
+Q10
+Input will be two files (boxes.txt, gifts.txt). An example is attached.
+Explanation:
+Gifts: 19,15,5,16,20,2,11,17,4,10,8,18,12,13,1,9,7,3,6,14
+Boxes: 5,20,13,6,16,4,2,3,9,15,18,11,1,10,14,8,7,19,12,17
+
+Take a random element of box e.g. 8 (or you can even start with first element which is 5). Using this element as pivot, partition the gifts. Thus gifts become
+P1: 5,2,4,1,7,3,6 and P2: 19,15,16,20,11,17,10,18,12,13,9,14
+Box #8 has been matched  gift #8.
+Using this value of 8, partition the boxes, which is becomes
+Q1: 5,6,4,2,3,1,7  and Q2: 20,13,16,9,15,18,11,10,14,19,12,17
+Gifts in partition P1 can only be matched with box partition Q1 and gifts in P2 can only be matched with box partition Q2.
+
+Repeat the process recursively till each partition reaches size of 1.
+The output should indicate for each gift,
+G19-B[18] if the box number indexing starts from 1, or B[17] if indexing starts from 0.
+G15-B[10] (assuming indexing starts from 1)
+And so on.
+
+In the literature it is known as matching nuts and bolts problem or alternatively as Key and Lock problem.
+thx
+
+Q11
+Consider N=6, thus initial students are
+AAAAAABBBBBB
+Total students : 12, first part:3, 2nd part: 6, 3rd part 3
+First solve the 2nd part problem which is 6 students
+AAABBB (let the index be from 1 to 6)
+if the problem size is 4 having 4 elements 2 of A and 2 of B.
+  AABB --> BABA (i.e. swap the two elements the ends)
+So decrease the problem by 4 in each iteration.
+I1: AA+solve(AB)+B
+  the smallest problem is of size 2, so just swap two elements AB
+I2:
+  Combining the solution swap 1st A with last B from right
+  In this case swap index 1 with 6.
+  Thus solution for 2nd part becomes
+    BABABA
+
+Now we have to solve 1st part and 3rd part (ignoring the 2nd part) again reduce the problem by 4
+Again keep decreasing by 4. if the smallest size is 2, return as it is
+If the smallest size is 4,
+  then swap 2nd A from left with 2nd last B from right.
+I3: AAA  BABABA BBB
+    combine (AA + solve(A  BABABA B) + BB)
+    combine(AA + ABABAB + BB) #swap 2nd A from left to 2nd B fromright
+    AB + ABABAB + AB
+    ABABABABASB
+
+If the input is AAAAAAAABBBBBBBB
+solve middle part first
+  AAAA + solve(AAAABBBB) + BBBB
+  AAAA + combine(AA + solve(AABB) + BB) + BBBB
+  AAAA + combine (AA + BABA + BB) + BBBB
+  AAAA + (BA + BABABA + BA) + BBBB
+Solve 1st and 3rd part
+  solve (AAAA + BABABABA + BBBB)
+  combine(AA + solve(AA + BABABABA + BB) + BB)
+  combine(AA + (AB+BABABABA+AB) + BB)
+  AB + (AB+BABABABA+AB) + AB
+  ABABBABABABAABAB
+
+Q12
+You are supposed to sort the array using insertion sort.
+However, when doing insert operation during insert, this insert has to be done using binary search.
+Consider an  example where we need to sort using ascending order.
+8,10,19,5,17,20,4,14,18,2
+First iteration: 8 is sorted., array is  8, -10,19,5,17,20,4,14,18,2
+2nd iteration: 10 is in sorted order, array is  8,10, -19,5,17,20,4,14,18,2
+3rd iteration: 19 is in sorted order, array is  8,10,19, -5,17,20,4,14,18,2
+4th iteration: 5 is not in sorted order. This has to be inserted part sub array (8,10,19). Typical insert sort does linear comparison to find the right place for 5 which will require 3 comparison. Using binary search of (8,10,10), it will require only two comparison.
+The sorted array now becomes 5, 8,10,19,-17,20,4,14,18,2
+5th iteration: 17 is not in sorted order. It needs to be inserted in right place in (5,8,10,19) which is just before 19.
+The sorted array becomes 5, 8,10,17,19, -20,4,14,18,2
+6th iteration: 29 is in sorted order, array is  5,8,10,17,19,20, -4,14,18,2
+7th iteration: 4 is not in sorted order and to be inserted in right place in (5,8,10,17,19,20) which general linear sort requires 6 comparison. Using binary search, we will require only 3 comparisons. The Sort array becomes 4,5,8,10,17,19,20,  -14,18,2
+
+
+

@@ -1,0 +1,69 @@
+Youtube video on Algorithms
+
+Graph Traversal
+https://www.youtube.com/watch?v=WVmr0UCs99Y
+
+Greedy Approach
+https://www.youtube.com/watch?v=i7k3FBfG9vk
+
+fractioal knapsack
+https://www.youtube.com/watch?v=X30Kri9n0fw
+
+Prims Algo
+https://www.youtube.com/watch?v=YW_gtMCmvwk
+
+Kruskal Algo
+https://www.youtube.com/watch?v=02LVwjFQHcY
+
+Job Scheduling
+https://www.youtube.com/watch?v=MycR64NZLDQ
+
+Heapsort
+https://www.youtube.com/watch?v=3jw7TXSrIHg
+
+Huffman codes
+https://www.youtube.com/watch?v=hovw_aIdtQA
+
+Single Source Shortest paths - Dijkstra algo
+https://www.youtube.com/watch?v=iSOMgYHadQk
+
+Intro to dynamic programming
+https://www.youtube.com/watch?v=ZRpUe-GuHQ8
+
+Multistage graphs
+https://www.youtube.com/watch?v=A5AVKnjqebA
+
+Job Assignment problem
+https://www.youtube.com/watch?v=pipfPMXLTGM
+
+Warshal-Floyd Algo
+https://www.youtube.com/watch?v=xD36RtAr50Y
+
+Optima BST
+https://www.youtube.com/watch?v=_vQGH57Us78
+
+Bellman Ford Algo
+https://www.youtube.com/watch?v=-g1pb2mIzyo
+
+Knapsack problem
+https://www.youtube.com/watch?v=5gPPkYrlWOc
+
+TSP with using Dynamic programming
+https://www.youtube.com/watch?v=HDj-OWMf9YQ
+
+Backtracking algo
+https://www.youtube.com/watch?v=Q2k3jM9R64w
+
+Hamiltonian Cycles
+https://www.youtube.com/watch?v=SHzQTjWR9Zo
+
+Branch and Bound - Job Assignment
+https://www.youtube.com/watch?v=0lbzRQATU8s
+
+Least Cost Branch n Bound - Knapsack
+https://www.youtube.com/watch?v=mrQyxlgnNYo
+
+FIFO Branch and Bound Knapsack
+https://www.youtube.com/watch?v=FwYI_c9rdbo
+
+
